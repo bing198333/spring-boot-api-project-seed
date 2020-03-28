@@ -1,3 +1,9 @@
+
+/*
+执行脚本：
+mysql -h 47.241.22.192 -u ZB -p < demo-user.sql
+*/
+
 /*
 Navicat MySQL Data Transfer
 
@@ -12,6 +18,14 @@ File Encoding         : 65001
 
 Date: 2017-06-23 14:25:27
 */
+
+-- 如果test数据库不存在，就创建test数据库：
+CREATE DATABASE IF NOT EXISTS test;
+
+-- 切换到test数据库
+USE test;
+
+
 
 SET FOREIGN_KEY_CHECKS=0;
 
