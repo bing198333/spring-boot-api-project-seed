@@ -51,8 +51,12 @@ public class UserController {
     }
 
     @PostMapping("/list")
-    public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
+    public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) throws Exception {
         PageHelper.startPage(page, size);
+        boolean flag = false;
+        if (flag) {
+            throw new Exception("idea debug时，模拟抛异常");
+        }
         List<User> list = userService.findAll();
         PageInfo pageInfo = new PageInfo(list);
         return ResultGenerator.genSuccessResult(pageInfo);
